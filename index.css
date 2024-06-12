@@ -1,0 +1,157 @@
+*{
+    font-family: cursive;
+    margin:0;
+    padding:0;
+}
+:root{
+   --mcol0:#29B6F6;
+   --mcol0:#2196F3;
+   --mcol0:#1976D2;
+   --txtcol0:#90A4AE;
+   --txtcol1:#607D8B;
+   --whitecol:#ECEFF1;
+   --darkcol:#263238;
+}
+body{
+    color:#c3b6b6;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-top:15vh;
+    background-color: #011540;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000' fill-opacity='.1' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
+    padding-top:5%;
+ 
+}
+
+.headingGame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50vh;
+   color: white; /* White text */
+    font-size: 50px;
+    margin: 0%; /* Remove default margin */
+}
+
+
+#puzzleContainer{
+    position:relative;
+    width:50vh;
+    height:50vh;
+   
+    border-radius:8px;
+    border:1px solid var(--mcol0);
+   
+}
+
+/* We have styled all the number blocks using css we will assign ther poistion using javascript.Currently all the blocks are at same poisition*/
+.puzzleBlock{
+    position:absolute;
+    left:0;
+    top:0;
+    width:25%;
+    height:25%;
+    background-color:#49cee63e;
+    
+    color:var(--whitecol);
+    font-size:6vh;
+    font-weight:bold;
+    text-align:center;
+    cursor:pointer;
+    user-select:none;
+    transition:left 0.3s,top 0.3s;
+    
+   
+}
+#difficulty-button{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction:row;
+    width:50vh;
+    height:10vh;
+    background-color:var(--darkcol);
+    border-radius:8px;
+    margin-top:22px;
+ 
+}
+.difficultyLevels{
+    flex-grow:1;
+    background-color:inherit;
+    color:var(--mcol2);
+    text-align:center;
+    font-size:3vh;
+    font-weight:bold;
+    padding-top:5%;
+    margin:4px;
+    cursor:pointer;
+    transition:font-size 0.3s;
+   
+}
+.difficultyLevels:hover{
+    opacity:0.8;
+    font-size:3.5vh;
+}
+.difficultyLevels.active{
+    background-color: inherit;
+    color:var(--mcol0);
+}
+#freeze-button{
+    flex-grow:1;
+    width:50vh;
+    height:10vh;
+    background-color:var(--darkcol);
+    color:var(--mcol2);
+    text-align:center;
+    font-size:3vh;
+    font-weight:bold;
+   
+    cursor:pointer;
+    transition:font-size 0.3s;
+    
+}
+.freeze-button:hover{
+    opacity:0.8;
+    font-size:3.5vh;
+}
+.freeze-button.active{
+    background-color: inherit;
+    color:#fd0000;
+}
+#preloader{
+    display:flex;
+    background:#000000;
+    height:1t00vh;
+    width:100%;
+    position:fixed;
+    z-index:100;
+    justify-content: center;
+    align-items:center;
+}
+   
+
+.loader {    
+    --r1: 154%;
+    --r2: 68.5%;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%; 
+    background:
+      radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,#269af2 80%),
+      radial-gradient(var(--r1) var(--r2) at bottom,#269af2 79.5%,#0000 80%),
+      radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,#269af2 80%),
+      #ccc;
+    background-size: 50.5% 220%;
+    background-position: -100% 0%,0% 0%,100% 0%;
+    background-repeat:no-repeat;
+    animation: l9 2s infinite linear;
+  }
+  @keyframes l9 {
+      33%  {background-position:    0% 33% ,100% 33% ,200% 33% }
+      66%  {background-position: -100%  66%,0%   66% ,100% 66% }
+      100% {background-position:    0% 100%,100% 100%,200% 100%}
+  }
+  
